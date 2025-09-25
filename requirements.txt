@@ -1,6 +1,8 @@
 Django==4.2.5
-channels[daphne]
+channels[daphne]==4.0.0
 channels-redis==4.1.0
 django-autoslug==1.9.9
 psycopg2-binary==2.9.7
 whitenoise==6.5.0
+dj-database-url==2.2.0
+django-redis==5.4.0
