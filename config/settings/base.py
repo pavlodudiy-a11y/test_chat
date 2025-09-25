@@ -33,6 +33,9 @@ DEBUG = True
 # TODO: Set it on the environment variable
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://test-chat-2-ubhf.onrender.com",
+]
 LOGOUT_REDIRECT_URL = '/login'
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login'
