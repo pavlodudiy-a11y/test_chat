@@ -17,14 +17,24 @@ Ensure you have the following installed:
    git clone https://github.com/pavlodudiy-a11y/test_chat.git
    cd realtime-django-chat
    ```
+   
+2. Setup .env file:
 
-2. Build and launch the Docker containers (Django, PostgreSQL, Redis):
+   Create a `.env` file in the root directory of the project and add the following environment variables:
+
+   ```env
+   REDIS_URL=
+   DB_URL=
+
+3. Build and launch the Docker container Django:
 
    ```bash
-   docker compose up --build
+   docker build -t my-django-app:latest . 
+   
+   docker run --name test_chat --env-file .env -it --rm -p 8000:8000 my-django-app 
    ```
 
-3. Access the Django application in your web browser at http://localhost:8000.
+4. Access the Django application in your web browser at http://localhost:8000.
 
 ## Creating a Superuser (Optional)
 
@@ -33,7 +43,7 @@ To create a superuser in Django from Docker Compose, follow the next steps:
 1. Open a terminal and run the following command to create a superuser:
 
    ```bash
-    docker compose exec django python manage.py createsuperuser
+    docker exec -it test_chat python manage.py createsuperuser
    ```
 
 ## You're Ready! 🚀
