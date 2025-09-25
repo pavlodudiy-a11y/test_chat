@@ -38,7 +38,7 @@
     errorMessage.hidden = true;
 
     // Create the WebSocket URL based on the current host and chatName
-    const chatSocketURL = `ws://${window.location.host}/ws/${chatName}/`;
+    const chatSocketURL = `wss://${window.location.host}/ws/${chatName}/`;
     const chatSocket = new WebSocket(chatSocketURL);
 
     // Log the WebSocket URL for debugging
